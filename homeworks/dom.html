@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>Текст</p>
+        <p>Другой</p>
+        <p>Следующий</p>
+        <p>Последний</p>
+    </div>
+    <div></div>
+    <div></div>
+    <script>
+        // Получить и вывести в консоль:
+        // head
+        console.group('HEAD')
+        console.log(document.head);
+        console.groupEnd();
+        // body
+        console.group('BODY');
+        console.log(document.body);
+        console.groupEnd();
+        // все дочерние элементы body
+        console.group('все дочерние элементы body')
+        for (let node of document.body.querySelectorAll ('*')) {
+            console.log(node);
+        }
+        console.groupEnd();
+
+        const childrens = document.body.firstElementChild.childNodes;
+        // первый div и все его дочерние узлы
+        console.group('первый div и все его дочерние узлы');
+        console.log(document.body.firstElementChild, childrens)
+        console.groupEnd();
+        //вывести все дочерние узлы в консоль 
+        console.group('все дочерние узлы div')
+        for (let node of childrens) {
+            console.log(node);
+        }
+        console.groupEnd();
+        //вывести все дочерние узлы в консоль кроме первого
+        console.group('все дочерние узлы div кроме первого')
+        for (let i = 1; i < childrens.length - 1; i++) {
+            console.log(childrens[i]);
+        };
+        console.groupEnd();
+    </script>
+</body>
+</html>
