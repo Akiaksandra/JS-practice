@@ -6,14 +6,14 @@ console.log(multiply(1, 2, 3, 4));
 
 //2
 // С помощью рекурсии вычислить факториал числа 10.
-const recurcion = (num) => {
+const recurcionNum = (num) => {
     if (num === 1) {
         return 1;
     } else {
-        return num * recurcion(num - 1);
+        return num * recurcionNum(num - 1);
     };
 };
-console.log(recurcion(6));
+console.log(recurcionNum(6));
 
 //3
 // Создать функцию, которая принимает строку и возвращает перевернутую строку ('test') = 'tset'.
@@ -37,12 +37,20 @@ console.log(replaceWithUnicode('hello'));
 
 //6
 // Написать функцию-рекурсию, которая выведет каждый символ строки в конcоль ('test') => 't' 'e' 's' 't'
-//const recurcion6 = (str) => console.log(str.split("").join(" "));
-//recurcion6("test");
+const recurcionStr = (str) => {
+    //str.split("").reverse().join("");
+    if (str.length === 0) {
+       return "";
+    } else {
+        console.log(str[0]);
+        recurcionStr(str.substring(1));
+    } 
+};
+recurcionStr("hello");
 
 //7
 // Создать две функции и дать им осмысленные названия:
 // первая функция принимает массив и callback, возвращая строку из обработанного массива.
-const createStringFromArray = 0;
+const createStringFromArray = (arr, func) => func(arr);
 // вторая функция (callback) обрабатывает каждый элемент массива
-const handleEachElement = 0;
+const handleEachElement = (arr, func) => arr.forEach(func);

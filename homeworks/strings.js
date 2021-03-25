@@ -27,7 +27,7 @@ let secondSpaceIndex = string.indexOf(" ", string.indexOf(" ")+1);
 console.log(`Второй пробел располагается под индексом ${secondSpaceIndex}`);
 
 // Получить строку со 2-ого символа длинной 6 букв
-let newString = string.substr(1, 6);
+let newString = string.split("").join("").substr(1, 6); //чтобы получить имено буквы, без пробелов
 console.log(`Строка со 2 символа длиной 6 букв: ${newString}`);
 
 // Получить строку с 1 по 7 символ

@@ -1,5 +1,6 @@
 // Получить число Pi из Math и округлить его до двух знаков после точки
-let smallPi = Math.PI.toFixed(2); 
+// унарный + нужен потому, что метод toFixed возвращает строку
+let smallPi = +Math.PI.toFixed(2); 
 console.log(`Число Pi, окргуленнное до 2 знаков после запятой ${smallPi}`);
 
 // Найти максимальное и минимальное значения из представленного ряда 10, 17, 5, 12, 15, 99, 1
@@ -27,12 +28,12 @@ let min = Math.min(arr);
 // let max = maxArray(arr);
 // let min = minArray(arr);
 
-//console.log(`Максимальное число из массива = ${max}, минимальное = ${min}`)
+console.log(`Максимальное число из массива = ${max}, минимальное = ${min}`)
 
 
 // С помощью Math.random:
 // получить случайное число и округлить его до двух цифр после запятой
-let randomNumFixed = Math.random().toFixed(2);
+let randomNumFixed = +Math.random().toFixed(2);
 console.log(`Случайное число, округлённое до двух цифр после запятой ${randomNumFixed}`);
 
 // получить случайное число от 0 до Х
@@ -44,5 +45,6 @@ console.log(`Случайное число от 0 до ${x} = ${randomNum}`);
 // Получить число из строки '100$'
 let fromString = "100$"
 let numFromString = parseInt(fromString);
-console.log(`Число из строки ${fromString} = ${numFromString}`)
+console.log(`Число из строки ${fromString} = ${numFromString}`);
+
 
