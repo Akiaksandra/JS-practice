@@ -51,7 +51,7 @@ console.log(deleteFirstElem(arr4_1, arr4_2));
 //5
 // Создать функцию, которая упорядочит буквы в строке "екважбигёзд" в алфавитном порядке и возвратит строку в обратном порядке ("кизжёедгвба").
 let str = "екважбигёзд";
-const reverseAndSortStr_5 = (str) => str.split("").sort().reverse().join("");
+const reverseAndSortStr_5 = (str) => str.split("").sort((a, b) => b.localeCompare(a)).join("");
 console.log(reverseAndSortStr_5(str));
 
 //6
