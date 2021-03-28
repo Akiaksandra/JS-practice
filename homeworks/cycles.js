@@ -3,34 +3,35 @@
 
 //1
 // В строке "Я стану крутым программистом" сделать первую букву каждого слова в верхнем регистре"
-const makeFirstLettersBig = () => {
-    let str = "Я стану крутым программистом";
-    let wordsFromStr = str.split(' '); // разбили строку на массив слов
+let str = "Я стану крутым программистом";
+
+const makeFirstLettersBig = (str) => {
+    const wordsFromStr = str.split(' '); // разбили строку на массив слов
     for (let i = 0; i < wordsFromStr.length; i++) {
         wordsFromStr[i] = wordsFromStr[i].slice(0, 1).toUpperCase() + wordsFromStr[i].slice(1); // вырезали первую букву слова, увеличили ее и склеили с оставшимися буквами
     }
-    let result = wordsFromStr.join(' '); //сформировали из массива строку 
+    const result = wordsFromStr.join(' '); //сформировали из массива строку 
     console.log(result);
 
     //ИЛИ через map
-    // let str = "Я стану крутым программистом";
-    // let wordsFromStr = str.split(' ');
-    // let result = wordsFromStr.map(word => word.slice(0, 1).toUpperCase() + word.slice(1)).join(' ');
+    // const wordsFromStr = str.split(' ');
+    // const result = wordsFromStr.map(word => word.slice(0, 1).toUpperCase() + word.slice(1)).join(' ');
     // console.log(result);
 }
-makeFirstLettersBig();
+makeFirstLettersBig(str);
 
 //2
 // Вычислить факториал числа 9 (факториал числа - это произведение всех натуральных чисел от 1 до n включительно. например, 2! = 21 или 6! = 654321)
-const calculateFactorial = () => {
-    let number = 6;
+let number = 6;
+
+const calculateFactorial = (number) => {
     let result = 1;
     for (let i = 1; i <= number; i++) {
         result = result * i;
     }
     console.log(result);
 }
-calculateFactorial();
+calculateFactorial(number);
 
 //3
 // Создать строку "Просветление наступит через: 10, 9, 8, 7, 6, 5, 4, 3, 2, 1"

@@ -12,7 +12,7 @@
 // Возвести переменную в куб, используя краткую запись.
 const cube = () => {
     let test1 = 3;
-    let cube = test1**3;
+    const cube = test1**3;
     console.log(cube);
 }
 cube();

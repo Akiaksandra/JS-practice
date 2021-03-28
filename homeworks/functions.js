@@ -23,7 +23,7 @@ console.log(revertStr('test'));
 //4
 // Написать функцию, которая проверяет является ли слово палиндромом
 const palindromCheck = (str) => {
-    let palindrom = str.split("").reverse().join("");
+    const palindrom = str.split("").reverse().join("");
     return str === palindrom;
 };
 console.log(palindromCheck('tet'));

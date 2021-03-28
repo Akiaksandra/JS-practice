@@ -2,7 +2,7 @@
 //1
 // Используя функцию, найти последний элемент массива, не изменяя его.
 const findLastElem = (arr) => {
-    let lastElem = arr[arr.length - 1];
+    const lastElem = arr[arr.length - 1];
     return lastElem;
 }
 let arr1 = [1,3,6];
@@ -12,7 +12,7 @@ console.log(`Последний элемент в массиве = ${findLastEle
 // Создать такую функцию, которая принимала бы массив [1,3,6], а возвращала новый массив с дублированными элементами [1,3,6,1,3,6].
 let arr2 = [1,3,6];
 const makeDoubleArr = (arr) => {
-    let doubleArr = arr.slice(); // создали копию массива
+    const doubleArr = arr.slice(); // создали копию массива
     for (let i = 0; i < arr.length; i++) doubleArr.push(arr[i]);
     return doubleArr;
     //ИЛИ
@@ -41,7 +41,7 @@ console.log(createArr(number));
 let arr4_1 = [1, 2, 3];
 let arr4_2 = ["x", "y", "z"];
 const deleteFirstElem = (...arrays) => {
-    for (arr of arrays) {
+    for (let arr of arrays) {
         arr.shift();
     }
     return arrays;
@@ -71,7 +71,7 @@ console.log(getNewArray(arr7, start, end));
 //8
 // Удвоить элементы массива, не используя циклы.,
 let arr8 = [5, 2, -1, 6, 9, -9, 3];
-let newArr8 = arr8.map((val) => val*2);
+const newArr8 = arr8.map((val) => val*2);
 console.log(newArr8);
 
 //9
@@ -107,6 +107,7 @@ console.log(arr12);
 //13
 // Отсортировать массив объектов по возрастающему количеству ног животных: [ {kind: "tarantula", info: {legs: 8, eyes: 8}}, {kind: "french bulldog", info: {legs: 4, eyes: 2}}, {kind: "human", info: {legs: 2, eyes: 2}}, {kind: "lobster", info: {legs: 10, eyes: 2}}, ]
 let arr13 = [ {kind: "tarantula", info: {legs: 8, eyes: 8}}, {kind: "french bulldog", info: {legs: 4, eyes: 2}}, {kind: "human", info: {legs: 2, eyes: 2}}, {kind: "lobster", info: {legs: 10, eyes: 2}} ];
+
 arr13.sort((a, b) => a.info.legs - b.info.legs);
 console.log(arr13);
 
@@ -114,7 +115,7 @@ console.log(arr13);
 //Написать функцию, которая принимает массив услуг и два числа, представляющих собой время исполнения услуг, а также возвращает все услуги, находящиеся в диапазоне времени исполнения и отсортированные от меньшего времени исполнения к большему. const services = [ {service: "service1", executionTime: 56}, {service: "service2", executionTime: 97}, {service: "service3", executionTime: 23}, {service: "service4", executionTime: 65}, {service: "service5", executionTime: 2}, {service: "service6", executionTime: 73}, {service: "service7", executionTime: 82}, {service: "service8", executionTime: 19}, {service: "service9", executionTime: 33}, {service: "service10", executionTime: 42}, ]. Например, filterServices(services, 20, 60).
 let arr14 = [ {service: "service1", executionTime: 56}, {service: "service2", executionTime: 97}, {service: "service3", executionTime: 23}, {service: "service4", executionTime: 65}, {service: "service5", executionTime: 2}, {service: "service6", executionTime: 73}, {service: "service7", executionTime: 82}, {service: "service8", executionTime: 19}, {service: "service9", executionTime: 33}, {service: "service10", executionTime: 42} ];
 const filterServices = (arr, start, end) => {
-    let newArr14 = arr.filter(value => value.executionTime >= start && value.executionTime <= end);
+    const newArr14 = arr.filter(value => value.executionTime >= start && value.executionTime <= end);
     newArr14.sort((a, b) => a.executionTime - b.executionTime);
     return newArr14;
 }    
