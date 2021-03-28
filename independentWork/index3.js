@@ -16,15 +16,15 @@ normalizeWords(['web', 'JavaScript', Senla, 'script', 'programming'])
 
 const normalizeWords = (arr) => {
     //Вариант 1
-    let lowArr = arr.map(item => item.toLowerCase());
+    const lowArr = arr.map(item => item.toLowerCase());
 
-    let result = [...new Set(lowArr)];
+    const result = [...new Set(lowArr)];
     //ИЛИ
     // let result = Array.from(new Set(lowArr));
 
     //Вариант 2 (менее читабельный)
-    // let result = arr.reduce((res, item) => {
-    //     let lowItem = item.toLowerCase();
+    // const result = arr.reduce((res, item) => {
+    //     const lowItem = item.toLowerCase();
     //     return res.includes(lowItem) ? res : [...res, lowItem];
     // }, []);
     
@@ -78,8 +78,8 @@ const addressBook = (str) => {
     commands = str.split(" ");
     switch(commands[0]) { //первое слово - команда
         case "ADD":
-            contactName = commands[1];// второе слово - имя
-            contactPhones = commands[2].split(",");
+            const contactName = commands[1];// второе слово - имя
+            const contactPhones = commands[2].split(",");
             if (!(contactName in book)) { //если этого имени нет в книге
                 book[contactName] = contactPhones; //создаем такой контакт с номерами
             } else {
@@ -92,19 +92,17 @@ const addressBook = (str) => {
             break;
         case "REMOVE_PHONE":
             phoneToRemove = commands[1]; 
-            for (contactName in book) {
+            for (let contactName in book) {
                 const index = book[contactName].indexOf(phoneToRemove); //Значение данной переменной будет положительно, если такой номер найден
                 if (index >= 0) {
                     book[contactName].splice(index, 1);
-                    console.log(true);
-                } else {
-                    console.log(false);
+                    console.log(`Номер ${phoneToRemove} у контакта ${contactName} успешно удален`);
                 }
             }
             break;
         case "SHOW":
             const bookToShow = [];
-            for (contactName in book) {
+            for (let contactName in book) {
                 if (book[contactName].length > 0) {
                     bookToShow.push(`${contactName}: ${book[contactName].join(", ")}`);
                 };
@@ -115,11 +113,10 @@ const addressBook = (str) => {
     }
 };
 
-//addressBook('ADD Ivan 555-10-01,555-10-03');
 addressBook('ADD Ivan 555-10-08,555-10-09');
-addressBook("ADD Alex 555-20-01");
+addressBook('ADD Alex 555-20-01');
 addressBook('REMOVE_PHONE 555-20-01');
-addressBook("ADD Alex 555-20-01");
-addressBook("ADD Alex 555-20-03");
-addressBook("SHOW");
+// addressBook('ADD Alex 555-20-01');
+// addressBook('ADD Alex 555-20-03');
+addressBook('SHOW');
 
