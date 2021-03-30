@@ -71,7 +71,7 @@ displayEvenNumbers();
 // На основе строки "теперь я мастер циклов javascript" создать новую строку, где первые буквы каждого слова будут в верхнем регистре и будут отсутствовать пробелы. 
 const makeNewString = () => {
     let str = "теперь я мастер циклов javascript";
-    let wordsFromStr = str.split(' ');
+    let wordsFromStr = str.split(' '); //разбили на массив слов
     for (let i = 0; i < wordsFromStr.length; i++) {
         wordsFromStr[i] = wordsFromStr[i].slice(0, 1).toUpperCase() + wordsFromStr[i].slice(1);
     }

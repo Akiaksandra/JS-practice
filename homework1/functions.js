@@ -6,12 +6,13 @@ console.log(multiply(1, 2, 3, 4));
 
 //2
 // С помощью рекурсии вычислить факториал числа 10.
-const recurcionNum = (num) => {
+const recurcionNum = (num) => { //num === 1 ? 1 : num * recurcionNum(num - 1)
     if (num === 1) {
         return 1;
     } else {
         return num * recurcionNum(num - 1);
     };
+    
 };
 console.log(recurcionNum(6));
 

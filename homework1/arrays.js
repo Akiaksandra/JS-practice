@@ -78,8 +78,9 @@ console.log(newArr8);
 // Удалить из массива [1, 2, 3, 4, 5] второй и третий элементы. 
 let arr9 = [1, 2, 3, 4, 5];
 const deleteElems = (arr) => {
-    arr.splice(1, 2);
-    return arr;
+    const arrWithout2and3Elems = arr.slice(); //клонируем массив, чтобы не менять иходный
+    arrWithout2and3Elems.splice(1, 2);
+    return arrWithout2and3Elems;
 }
 console.log(deleteElems(arr9));
 
@@ -87,16 +88,18 @@ console.log(deleteElems(arr9));
 // Удалить из массива [1, 2, 3, 4, 5] второй и третий элементы и на их место вставить “три” и “четыре” соответственно.
 let arr10 = [1, 2, 3, 4, 5];
 const deleteAndPaste = (arr) => {
-    arr.splice(2, 2, 'три', 'четрые');
-    return arr;
+    const arrWithWords = [...arr]; //клонируем массив, чтобы не менять иходный
+    arrWithWords.splice(2, 2, 'три', 'четрые');
+    return arrWithWords;
 }
 console.log(deleteAndPaste(arr10));
 
 //11
 // Вставить в произвольный массив любое значение после второго элемента.
 let arr11 = [1, 2, 3, 4, 5];
-arr11.splice(3, 0, "yes");
-console.log(arr11);
+const arrWithYes = [...arr11]; //клонируем массив, чтобы не менять иходный
+arrWithYes.splice(3, 0, "yes");
+console.log(arrWithYes);
 
 //12
 // Отсортировать массив массивов таким образом, чтобы вначале шли массивы с наименьшей длиной. Создать копию произвольного массив"
