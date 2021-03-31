@@ -79,7 +79,7 @@ console.log(newArr8);
 let arr9 = [1, 2, 3, 4, 5];
 const deleteElems = (arr) => {
     const arrWithout2and3Elems = arr.slice(); //клонируем массив, чтобы не менять иходный
-    arrWithout2and3Elems.splice(1, 2);
+    arrWithout2and3Elems.splice(2, 2);
     return arrWithout2and3Elems;
 }
 console.log(deleteElems(arr9));
