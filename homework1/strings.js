@@ -12,7 +12,7 @@ const result = `${string[0].toUpperCase()}${string.slice(1, -1)}${string[string.
 console.log(`В строке '${result}' первая и последняя буквы теперь большие`);
 
 // Найти положение слова string в строке
-let word = 'string';
+const word = 'string';
 const findWordIndex = string.indexOf(word);
 if(findWordIndex === - 1) {
     console.log(`Слово ${word} НЕ найдено`);
@@ -35,7 +35,7 @@ const stringFrom1ElemTo7Elem = string.slice(0, 6);
 console.log(`Строка с 1 символа по 7 (невключительно): ${stringFrom1ElemTo7Elem}`);
 
 // Получить из ух переменных типа number x = 20, y = 21 получить строку '2021' 
-let x = 20, 
+const x = 20, 
     y = 21;
 const stringFromVariables = String(x) + String(y);  
 // ИЛИ

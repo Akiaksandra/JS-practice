@@ -3,7 +3,7 @@
 
 //1
 // В строке "Я стану крутым программистом" сделать первую букву каждого слова в верхнем регистре"
-let str = "Я стану крутым программистом";
+const str = "Я стану крутым программистом";
 
 const makeFirstLettersBig = (str) => {
     const wordsFromStr = str.split(' '); // разбили строку на массив слов
@@ -22,7 +22,7 @@ makeFirstLettersBig(str);
 
 //2
 // Вычислить факториал числа 9 (факториал числа - это произведение всех натуральных чисел от 1 до n включительно. например, 2! = 21 или 6! = 654321)
-let number = 6;
+const number = 6;
 
 const calculateFactorial = (number) => {
     let result = 1;
@@ -36,8 +36,8 @@ calculateFactorial(number);
 //3
 // Создать строку "Просветление наступит через: 10, 9, 8, 7, 6, 5, 4, 3, 2, 1"
 const countdown = () => {
-    let start = 1;
-    let end = 10;
+    const start = 1;
+    const end = 10;
     let result = "Просветление наступит через: "; 
     for (let i = end; i >= start; i--) {
         if (i !== start) {
@@ -53,8 +53,8 @@ countdown();
 //4
 // Найти и вывести в консоль все нечетные числа от 1 до 20 включительно.
 const displayEvenNumbers = () => {
-    let start = 1;
-    let end = 20;
+    const start = 1;
+    const end = 20;
     let result = ""; //let result = [];
     for (let i = start; i <= end; i++) {
         if (i % 2 !== 0) {
@@ -70,12 +70,12 @@ displayEvenNumbers();
 //5
 // На основе строки "теперь я мастер циклов javascript" создать новую строку, где первые буквы каждого слова будут в верхнем регистре и будут отсутствовать пробелы. 
 const makeNewString = () => {
-    let str = "теперь я мастер циклов javascript";
-    let wordsFromStr = str.split(' '); //разбили на массив слов
+    const str = "теперь я мастер циклов javascript";
+    const wordsFromStr = str.split(' '); //разбили на массив слов
     for (let i = 0; i < wordsFromStr.length; i++) {
         wordsFromStr[i] = wordsFromStr[i].slice(0, 1).toUpperCase() + wordsFromStr[i].slice(1);
     }
-    let result = wordsFromStr.join("");
+    const result = wordsFromStr.join("");
     console.log(result);
 };
 makeNewString();

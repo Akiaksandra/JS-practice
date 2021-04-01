@@ -10,13 +10,13 @@
 
 // 1 
 // Возвести переменную в куб, используя краткую запись.
-let test1 = 3;
+const test1 = 3;
 const cube = (number) => number**3;
 console.log(cube(test1));
 
 // 2
 // Если переменная равна “маленький”, присвоить ей значение “большой”, иначе “маленький”. Сделать тоже самое, используя тернарный оператор.
-let smallOrBig = 'маленький';
+const smallOrBig = 'маленький';
 const checkString = (word) => {
     return word = word === 'маленький' ? 'большой' : 'маленький';
 }
@@ -24,7 +24,7 @@ console.log(checkString(smallOrBig));
 
 // 3
 // Записать условие, используя условный оператор if: если переменная меньше нуля: присвоить ей строку “меньше нуля” если переменная равна нулю: присвоить 1 если больше нуля: используя краткую запись, умножить переменную на 10 Сделать тоже самое, используя тернарный оператор.
-let test2 = 5;
+const test2 = 5;
 const checkValue = (number) => {
     if (number < 0) {
         number = "Меньше нуля";
@@ -50,7 +50,7 @@ console.log(checkValue(test2));
 // } else {
 //   console.log('неизвестное науке животное');
 // }
-let animalName = 'свинка';
+const animalName = 'свинка';
 const checkAnimal = (name) => {
     switch (name) {
         case 'котик':

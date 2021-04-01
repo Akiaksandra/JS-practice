@@ -1,3 +1,4 @@
+'use strict'
 // Получить число Pi из Math и округлить его до двух знаков после точки
 // унарный + нужен потому, что метод toFixed возвращает строку
 const smallPi = +Math.PI.toFixed(2); 
@@ -41,7 +42,6 @@ let x = 10;
 let randomNum = Math.floor(Math.random() * (x + 1));
 console.log(`Случайное число от 0 до ${x} = ${randomNum}`);
 
-'use strict'
 // Получить число из строки '100$'
 let fromString = "100$"
 const numFromString = parseInt(fromString);
