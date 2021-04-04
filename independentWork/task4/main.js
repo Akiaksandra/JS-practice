@@ -62,10 +62,10 @@ function onPageLoaded () {
             movies.innerHTML = codeForItem;
         });
         moviesDB.sort(function (a, b) {
-            if (a.movie > b.movie) {
+            if (a.movie.toLowerCase() > b.movie.toLowerCase()) {
               return 1;
             }
-            if (a.movie < b.movie) {
+            if (a.movie.toLowerCase() < b.movie.toLowerCase()) {
               return -1;
             }
             return 0});
