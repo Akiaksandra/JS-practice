@@ -1,8 +1,22 @@
 'use strict'
 //1
 // Создать функцию multiply, которая будет принимать любое количество чисел и возвращать их произведение: multiplay(1,2,3) = 6. Если нет ни одного аргумента вернуть ноль.
-const multiply = (...numbers) => numbers.reduce((result, item) => result * item, 1);
-console.log(multiply(1, 2, 3, 4));
+//const multiplay = (...numbers) => numbers.reduce((result, item) => result * item, 1);
+//ИЛИ через arguments
+function multiplay() {
+    if (arguments.length > 0) {
+        let result = 1;
+        for (let i = 0; i < arguments.length; i++) {
+            result *= arguments[i];
+        }
+        return result;
+    } else {
+        return 0;
+    }
+};
+
+console.log(multiplay(1, 2, 3, 4));
+
 
 //2
 // С помощью рекурсии вычислить факториал числа 10.
