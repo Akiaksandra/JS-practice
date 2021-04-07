@@ -14,8 +14,10 @@ function onPageLoaded () {
     const addFormButton = document.querySelector(".add-form-button");
     const loveFilm = document.querySelector("#checkbox");
 
+    //Массив, в котором будут храниться фильмы
     let moviesDB = [];
     
+    //Для красоты, не несет логической нагрузки
     const toggleEmptyListMessage = () => {
         if (moviesDB.length === 0) {
             emptyListMessage.classList.remove('hidden');
@@ -27,7 +29,7 @@ function onPageLoaded () {
 
     //Считывам localStorage при обновлении страницы
     if (localStorage.getItem('movies')) {
-        moviesDB = JSON.parse(localStorage.getItem('movies'));
+        moviesDB = [...JSON.parse(localStorage.getItem('movies'))];
         displayMovies();
     };
 
@@ -35,22 +37,19 @@ function onPageLoaded () {
         localStorage.setItem('movies', JSON.stringify(moviesDB));
     };
 
-    function sortDOM() {
-        let arr = Array.from(movies.children)
-        .sort((function (a, b) {
-            if (a.querySelector('.movies-name').textContent.toLowerCase() > b.querySelector('.movies-name').textContent.toLowerCase()) {
-                return 1;
-            }
-            if (a.querySelector('.movies-name').textContent.toLowerCase() < b.querySelector('.movies-name').textContent.toLowerCase()) {
-                return -1;
-            }
-            return 0}))
-        .forEach(function(ele) {
-            movies.appendChild(ele);
-        });        
-    }
-
     function displayMovies() {
+        //Сортируем массив с данными, чтобы в localStorage элементы шли в таком же порядке
+        moviesDB.sort(function (a, b) {
+            if (a.movie.toLowerCase() > b.movie.toLowerCase()) {
+              return 1;
+            }
+            if (a.movie.toLowerCase() < b.movie.toLowerCase()) {
+              return -1;
+            }
+            return 0});
+        updateLocal();
+
+        //Отржаем код на странице
         let codeForItem = '';
         moviesDB.forEach((item) => {
             codeForItem += `
@@ -61,29 +60,25 @@ function onPageLoaded () {
             `;
             movies.innerHTML = codeForItem;
         });
-        moviesDB.sort(function (a, b) {
-            if (a.movie.toLowerCase() > b.movie.toLowerCase()) {
-              return 1;
-            }
-            if (a.movie.toLowerCase() < b.movie.toLowerCase()) {
-              return -1;
-            }
-            return 0});
-        updateLocal();
-        sortDOM();
+        //Очищаем инпут
         addFormInput.value = "";
+        //Проверяем, не пуст ли наш список
         toggleEmptyListMessage();
     };
 
     addFormButton.addEventListener("click", (event) => {
         event.preventDefault();
+        //Проверяем, ввели ли что-то
         if (addFormInput.value.length > 0) {
+            //создаем новый объект
             let newItem = {
                 movie: addFormInput.value,
             }
+            //Добавляем его в наш массив
             moviesDB.push(newItem);
+            //Вызываем функцию, которая покажет его на странице
             displayMovies();
-            updateLocal();
+            //Проверяем галочку
             if (loveFilm.checked) {
                 console.log("Добавляем любимый фильм");
             }
@@ -92,14 +87,19 @@ function onPageLoaded () {
         }
     });
 
-    //Удаление в корзину!
+    //Удаление (дольше всего делала....)
     movies.addEventListener('click', (event) => {
         let target = event.target.parentElement
-        if (target.tagName === "LI"){
+        //если мы кликнули по элементу, родитель которого li, а сам элемент - кнопка, то...
+        if (target.tagName === "LI" && event.target.tagName === "BUTTON"){
+            //В цикле проверяем, по какому элементу кликнули
             for (let i = 0; i < moviesDB.length; i++) {
                 if (target.querySelector('span').textContent.substring(0, 20) == moviesDB[i].movie.substring(0, 20)) {
+                    //И вырезаем этот элемент из массива
                     moviesDB.splice(i, 1);
+                    //Обновляем локальную базу
                     updateLocal();
+                    //удаляем из верстки
                     target.remove();
                     toggleEmptyListMessage();
                 };
