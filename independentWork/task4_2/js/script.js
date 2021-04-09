@@ -6,7 +6,7 @@ Array.from(document.querySelector(".promo__adv").getElementsByTagName("img")).fo
 document.querySelector(".promo__genre").textContent = "ДРАМА"
 // 3) Изменить задний фон постера с фильмом на изображение "bg.jpg". Оно лежит в папке img.
 // Реализовать только при помощи JS
-document.querySelector(".promo__bg").style.backgroundImage = "url(../img/bg.jpg)";
+document.querySelector(".promo__bg").style.backgroundImage = "url(img/bg.jpg)";
 
 
 /*1) Реализовать функционал, что после заполнения формы и нажатия кнопки "Подтвердить" -новый фильм добавляется в список. Страница не должна перезагружаться.Новый фильм должен добавляться в movieDB.movies.Для получения доступа к значению input - обращаемся к нему как input.value;P.S. Здесь есть несколько вариантов решения задачи, принимается любой, но рабочий.
