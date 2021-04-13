@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ToDo list</title>
+        <link rel="shortcut icon" href="../images/favicon.ico">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">    
+    </head>
+    <body>
+        <header class="header">
+            <div class="container-header">
+                <a class="header-logo" href="https://senlainc.com/" target="_blank"><img src="/images/content/logo.svg" alt="Логотип компании Senla"></a>
+                <div class="custom-input">
+                    <input type="search" placeholder="Search task for to do" class="custom-input-search">
+                    <span class="custom-input-icon"></span>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+            <div class="background-image"></div>
+            <section class="tabs">
+                <ul class="tabs-list">
+                    <li class="tabs-item">
+                        <a href="#" class="tabs-link tabs-link__active" data-id="all">All</a>
+                    </li>
+                    <li class="tabs-item">
+                        <a href="#" class="tabs-link" data-id="active">Active</a>
+                    </li>
+                    <li class="tabs-item">
+                        <a href="#" class="tabs-link" data-id="done">Done</a>
+                    </li>
+                </ul>
+            </section>
+            <section class="new-task">
+                <label for="task-text" class="new-task-text">New task</label>
+                <textarea class="new-task-textarea" id="task-text"></textarea>
+                <button class="new-task-button">ADD</button>
+            </section>
+            <section class="tasks">
+                <ul class="tasks-list">
+                    <!-- <li class="tasks-item">
+                        <span class="tasks-item-text important-task">Попить чайку</span>
+                        <button class="tasks-item-button button-important">MARK IMPORTANT</button>
+                        <button class="tasks-item-button button-delete">
+                            <svg class="icon icon-delete">
+                                <use xlink:href="img/icons.svg#delete"></use>
+                            </svg>
+                        </button>
+                    </li> -->
+                </ul>
+            </section>
+        </main>
+    </body>
+</html>
