@@ -39,6 +39,9 @@ body * {
 .done-task span{
     text-decoration:line-through;
 }
+.done-task > .button-important {
+    display: none;
+}
 .icon-delete {
     fill: #666;
     opacity: 0.5;
