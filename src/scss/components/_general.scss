@@ -1,0 +1,50 @@
+body * {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 19px;
+}
+.main {
+    min-height: calc(100vh - 95px);
+}
+
+.header, .main {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+.container-header {
+    max-width: 776px;
+    margin: 20px 20px 31px 23px;
+    display: flex;
+    align-items: center;
+}
+.header-logo {
+    cursor: pointer;
+    display: block;
+}
+.background-image {
+    position: absolute;
+    top: 115px;
+    right: 0;
+    z-index: -1;
+    max-width: 903px;
+    width: 100%;
+    max-height: 735px;
+    height: 100%;
+    background: url(/src/images/design/taking_notes.png) no-repeat;
+    background-size: cover;
+}
+.done-task span{
+    text-decoration:line-through;
+}
+.icon-delete {
+    fill: #666;
+    opacity: 0.5;
+    width: 24px;
+    height: 24px;
+}
+.hidden, .hidden-for-search {
+    display: none !important; 
+}

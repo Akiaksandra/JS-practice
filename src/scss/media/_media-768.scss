@@ -1,0 +1,27 @@
+@media (max-width: 768px) {
+    .tasks-item-button {
+        opacity: 1;
+        cursor: pointer;
+        margin-top: auto;
+    }
+    .tasks-item {
+        flex-wrap: wrap;
+        height: 129px;
+    }
+    .tasks-item-text {
+        flex-basis: 100%;
+        max-width: 100%;
+        max-height: 55px;
+        padding-top: 0;
+    }
+    .tabs, .new-task {
+        margin-left: 20px;
+    }
+    .tasks {
+        padding-left: 20px;
+    }
+    .important-task::before {
+        top: 10px;
+    }
+    
+}

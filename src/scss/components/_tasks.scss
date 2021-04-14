@@ -1,0 +1,42 @@
+.tasks {
+    padding: 23px 20px 50px 40px;
+    &-list {
+        max-width: 763px;
+    }
+    &-item {
+        margin-bottom: 17px;
+        height: 109px;
+        width: 100%;
+        box-shadow: 0px 6px 20px 0px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        background: #FFFFFF;
+        padding: 11px 12px 13px 23px;
+        color: #53565A;
+        display: flex;
+        align-items: flex-start;
+        border: 1px solid transparent;
+        position: relative;
+        &:hover {
+            border: 1px solid rgba(47, 128, 237, 0.5);
+            box-shadow: 0px 6px 20px rgba(47, 128, 237, 0.75);
+        }
+        &-text {
+            max-height: 77px;
+            height: 100%;
+            max-width: 490px;
+            width: 100%;
+            padding-top: 5px;
+            overflow-y:auto;
+            overflow-wrap: break-word;
+        }
+        &-button {
+            opacity: 0;
+            cursor:not-allowed;
+            transition: opacity 0.2s;
+        }
+        &:hover .tasks-item-button {
+            opacity: 1;
+            cursor: pointer;
+        }
+    }
+}

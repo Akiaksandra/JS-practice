@@ -179,9 +179,8 @@ textarea {
  * 1. Show the overflow in Edge.
  */
 
-button,
-input { /* 1 */
-  overflow: visible;
+button { /* 1 */
+  -webkit-tap-highlight-color: transparent;
 }
 
 /**
