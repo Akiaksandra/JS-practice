@@ -42,6 +42,9 @@ body * {
 .done-task > .button-important {
     display: none;
 }
+.done-task .button-delete {
+    margin-left: auto;
+}
 .icon-delete {
     fill: #666;
     opacity: 0.5;
