@@ -21,7 +21,7 @@ if (localStorage.getItem('tasks')) {
 newTaskButton.addEventListener('click', clickNewTask);
 // Нажатие на enter при вводе
 newTaskText.addEventListener('keypress', (event) => {
-  if (event.keyCode === 13) {
+  if (event.keyCode === 13 && window.screen.width > 768) {
     clickNewTask(event);
   }
 });

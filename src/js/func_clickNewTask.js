@@ -13,7 +13,7 @@ const clickNewTask = (event) => {
       isImportant: false,
     };
       // Добавляем его в наш массив
-    tasksDB.push(newItem);
+    tasksDB.unshift(newItem);
     // Обновляем localStorage
     updateLocal();
     // Вызываем функцию, которая покажет данные на странице
