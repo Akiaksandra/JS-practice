@@ -5,7 +5,7 @@ const displayTasks = () => {
   let code = '';
   tasksDB.forEach((item) => {
     code += `
-          <li class="tasks-item active-task">
+          <li class="tasks-item active-task" tabindex="0">
                   <span class="tasks-item-text">${item.task}</span>
                   <button class="tasks-item-button button-important">MARK IMPORTANT</button>
                   <button class="tasks-item-button button-delete">

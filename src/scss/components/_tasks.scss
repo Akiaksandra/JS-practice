@@ -26,8 +26,9 @@
             max-width: 490px;
             width: 100%;
             padding-top: 5px;
-            overflow-y:auto;
-            overflow-wrap: break-word;
+            overflow: hidden;
+            text-overflow: ellipsis; //не работает((
+            //overflow-wrap: break-word;
         }
         &-button {
             opacity: 0;
