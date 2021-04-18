@@ -10,6 +10,11 @@ import makeTaskImportant from './func_makeImportant';
 import makeTaskDone from './func_makeTaskDone';
 import findTasks from './func_findTasks';
 
+// Полифил для IE
+if (typeof NodeList !== 'undefined' && NodeList.prototype && !NodeList.prototype.forEach) {
+  // Yes, there really no need for 'Object.defineProperty' here
+  NodeList.prototype.forEach = Array.prototype.forEach;
+}
 // Считываем localStorage при обновлении страницы
 if (localStorage.getItem('tasks')) {
   // Добавляем все данные из localStaroge в наш массив

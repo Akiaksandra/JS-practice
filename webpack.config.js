@@ -69,10 +69,10 @@ module.exports = {
       {
         test: /\.svg/,
         use: {
-          loader: "svg-url-loader",
+          loader: 'svg-url-loader',
           options: {
             // make loader to behave like url-loader, for all svg files
-            encoding: "base64",
+            encoding: 'base64',
           },
         },
       },
@@ -121,5 +121,5 @@ module.exports = {
       ],
     }),
   ].concat(htmlPluginEntries),
-  target: 'web',
+  target: ['web', 'es5'],
 };
