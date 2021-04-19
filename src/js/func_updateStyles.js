@@ -12,7 +12,7 @@ function updateStyles() {
     } else {
       taskText.classList.remove('important-task');
       taskButtonImportant.style.backgroundColor = '#27AE60';
-      taskButtonImportant.textContent = 'MAKE IMPORTANT';
+      taskButtonImportant.textContent = 'MARK IMPORTANT';
     }
     if (tasksDB[i].isDone) {
       tasksItem[i].classList.add('done-task');

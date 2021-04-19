@@ -54,6 +54,13 @@ body * {
 .hidden, .hidden-for-search {
     display: none !important; 
 }
-*:focus-visible {
-    outline: 2px solid #1E90FF;
+*:focus:not(:focus-visible) {
+    outline: none;
 }
+*:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 1px #1E90FF !important;
+    opacity: 1 !important;
+}
+
+
