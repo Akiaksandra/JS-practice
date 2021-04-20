@@ -30,10 +30,10 @@ newTaskText.addEventListener('keypress', (event) => {
     clickNewTask(event);
   }
 });
-// Отслеживание клика по кнопке УДАЛИТЬ
-tasksList.addEventListener('click', deleteTask);
 // Клики по табам
 tabsLink.forEach(clickTabsLink);
+// Отслеживание клика по кнопке УДАЛИТЬ
+tasksList.addEventListener('click', deleteTask);
 // Сделать важным
 tasksList.addEventListener('click', makeTaskImportant);
 // Отметить завершенным дело
