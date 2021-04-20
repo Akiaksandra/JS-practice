@@ -38,5 +38,6 @@ tabsLink.forEach(clickTabsLink);
 tasksList.addEventListener('click', makeTaskImportant);
 // Отметить завершенным дело
 tasksList.addEventListener('click', makeTaskDone);
+tasksList.addEventListener('keypress', makeTaskDone);
 // Отслеживание изменение поля поиска
 customInputSearch.addEventListener('input', findTasks);
