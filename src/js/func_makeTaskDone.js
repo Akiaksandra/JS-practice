@@ -4,7 +4,7 @@ import updateStyles from './func_updateStyles';
 
 const makeTaskDone = (event) => {
   // Если кликнули не по кнопкам, то зачеркиваем дело
-  if ((!event.target.closest('.button-important') && !event.target.closest('.button-delete')) || event.keyCode === 13) {
+  if (!event.target.closest('.button-important') && !event.target.closest('.button-delete') && event.keyCode === 13) {
     const taskItem = event.target.closest('.tasks-item');
     const taskText = taskItem.querySelector('.tasks-item-text');
     // Проверяем, какой кнопке в массиве соотвествует клик
