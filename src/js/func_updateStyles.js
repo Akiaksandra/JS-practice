@@ -2,10 +2,12 @@ import { tasksItem, tasksDB } from './variables';
 
 // Обновить классы на странице в соответствии с LocalStorage
 function updateStyles() {
-  for (let i = 0; i < tasksItem.length; i += 1) {
-    const taskText = tasksItem[i].querySelector('.tasks-item-text');
-    const taskButtonImportant = tasksItem[i].querySelector('.button-important');
-    if (tasksDB[i].isImportant) {
+  // Преобразуем живую коллекцию в массив, чтобы использовать методы массивов
+  const tasksItemArray = Array.from(tasksItem);
+  tasksItemArray.forEach((item, index) => {
+    const taskText = item.querySelector('.tasks-item-text');
+    const taskButtonImportant = item.querySelector('.button-important');
+    if (tasksDB[index].isImportant) {
       taskText.classList.add('important-task');
       taskButtonImportant.style.backgroundColor = '#BDBDBD';
       taskButtonImportant.textContent = 'NOT IMPORTANT';
@@ -14,14 +16,14 @@ function updateStyles() {
       taskButtonImportant.style.backgroundColor = '#27AE60';
       taskButtonImportant.textContent = 'MARK IMPORTANT';
     }
-    if (tasksDB[i].isDone) {
-      tasksItem[i].classList.add('done-task');
-      tasksItem[i].classList.remove('active-task');
+    if (tasksDB[index].isDone) {
+      item.classList.add('done-task');
+      item.classList.remove('active-task');
     } else {
-      tasksItem[i].classList.remove('done-task');
-      tasksItem[i].classList.add('active-task');
+      item.classList.remove('done-task');
+      item.classList.add('active-task');
     }
-  }
+  });
 }
 
 export { updateStyles as default };

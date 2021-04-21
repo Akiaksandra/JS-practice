@@ -2,19 +2,21 @@ import { tasksItem, newTaskBlock } from './variables';
 
 // Отображение задач по табам
 const filterTasks = (status) => {
+  // Преобразуем живую коллекцию в массив, чтобы использовать методы массивов
+  const tasksItemArray = Array.from(tasksItem);
   // Скрываем неподходящие задачи
   if (status === 'all-task') {
-    for (let i = 0; i < tasksItem.length; i += 1) {
-      tasksItem[i].classList.remove('hidden');
-    }
+    tasksItemArray.forEach((item) => {
+      item.classList.remove('hidden');
+    });
   } else {
-    for (let i = 0; i < tasksItem.length; i += 1) {
-      if (!tasksItem[i].classList.contains(status)) {
-        tasksItem[i].classList.add('hidden');
+    tasksItemArray.forEach((item) => {
+      if (!item.classList.contains(status)) {
+        item.classList.add('hidden');
       } else {
-        tasksItem[i].classList.remove('hidden');
+        item.classList.remove('hidden');
       }
-    }
+    });
   }
   // Скрываем блок ввода новой задачи на вкладке done
   if (status === 'done-task') {
