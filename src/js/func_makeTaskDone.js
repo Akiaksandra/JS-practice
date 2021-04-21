@@ -4,20 +4,17 @@ import updateStyles from './func_updateStyles';
 
 const makeTaskDone = (event) => {
   // Если кликнули не по кнопкам, то зачеркиваем дело
-  const taskItem = event.target.closest('.tasks-item');
-  if (!event.target.closest('.button-important') && !event.target.closest('.button-delete') && taskItem) {
-    const taskText = taskItem.querySelector('.tasks-item-text');
-    // Проверяем, какой кнопке в массиве соотвествует клик
-    for (let i = 0; i < tasksDB.length; i += 1) {
-      if (taskText.textContent === tasksDB[i].task) {
-        if (tasksDB[i].isDone) {
-          tasksDB[i].isDone = false;
-        } else {
-          tasksDB[i].isDone = true;
-        }
-        updateLocal();
-        updateStyles();
+  const taskText = event.target.closest('.tasks-item').querySelector('.tasks-item-text');
+  // Проверяем, какой кнопке в массиве соотвествует клик
+  for (let i = 0; i < tasksDB.length; i += 1) {
+    if (taskText.textContent === tasksDB[i].task) {
+      if (tasksDB[i].isDone) {
+        tasksDB[i].isDone = false;
+      } else {
+        tasksDB[i].isDone = true;
       }
+      updateLocal();
+      updateStyles();
     }
   }
 };

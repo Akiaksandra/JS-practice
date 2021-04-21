@@ -13,13 +13,6 @@
         border-radius: 20px;
         border: none;
         box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.4);
-        transition: opacity 0.3s;
-        // &:hover {
-        //     color:deeppink
-        // }
-        &:focus-visible {
-            opacity: 1;
-        }
     }
     &-delete {
         width: 40px;

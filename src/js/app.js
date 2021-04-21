@@ -4,11 +4,10 @@ import {
 } from './variables';
 import displayTasks from './func_displayTasks';
 import clickNewTask from './func_clickNewTask';
-import deleteTask from './func_deleteTask';
 import clickTabsLink from './func_clickTabsLink';
-import makeTaskImportant from './func_makeImportant';
-import makeTaskDone from './func_makeTaskDone';
+import makeTaskDoneByKeypress from './func_makeTaskDoneByKeypress';
 import findTasks from './func_findTasks';
+import findTarget from './func_findTarget';
 
 // Полифил для IE
 if (typeof NodeList !== 'undefined' && NodeList.prototype && !NodeList.prototype.forEach) {
@@ -32,12 +31,9 @@ newTaskText.addEventListener('keypress', (event) => {
 });
 // Клики по табам
 tabsLink.forEach(clickTabsLink);
-// Отслеживание клика по кнопке УДАЛИТЬ
-tasksList.addEventListener('click', deleteTask);
-// Сделать важным
-tasksList.addEventListener('click', makeTaskImportant);
-// Отметить завершенным дело
-tasksList.addEventListener('click', makeTaskDone);
-tasksList.addEventListener('keypress', makeTaskDone);
+// Отслеживание клика по задачам
+tasksList.addEventListener('click', findTarget);
+// Отметить завершенным дело через клавиатуру
+tasksList.addEventListener('keypress', makeTaskDoneByKeypress);
 // Отслеживание изменение поля поиска
 customInputSearch.addEventListener('input', findTasks);
